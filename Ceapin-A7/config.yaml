@@ -7,23 +7,23 @@
 # Snakefile will be in the root directory and paths will be `dms-vep-pipeline`
 # and `./`, but in this example they are upstream from this subdirectory.
 # ----------------------------------------------------------------------------
-pipeline_path: ../  # typically will be `dms-vep-pipeline-3` for real pipelines
-docs: ../docs  # typically will be `docs` for real pipelines
+pipeline_path: dms-vep-pipeline-3  # typically will be `dms-vep-pipeline-3` for real pipelines
+docs: docs  # typically will be `docs` for real pipelines
 
 # ----------------------------------------------------------------------------
 # Details on repo, used for docs. Change this to details for your project.
 # ----------------------------------------------------------------------------
 
 # Name of your main GitHub repo, eg https://github.com/<my_organization>/<my_repo>
-github_repo_url: https://github.com/dms-vep/dms-vep-pipeline-3
+github_repo_url: https://github.com/kwalcott97/SARS-CoV-2_Omicron_BA.1_spike_DMS_UPR_pertubation
 # GitHub blob path to where results files are stored. Typically "{repo}/blob/{branch}",
 # the "test_example" below is specific to this test example being within the pipeline
 # and should not be needed for other pipelines.
-github_blob_url: https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example
+github_blob_url: https://github.com/kwalcott97/SARS-CoV-2_Omicron_BA.1_spike_DMS_UPR_pertubation/blob/main
 # Some descriptions and metadata about the analysis.
-description: Deep mutational scanning (DMS) pipeline for a viral entry protein (VEP)
+description: Deep mutational scanning of SARS-CoV-2 BA.1 spike using a barcoded lentiviral platform in the presence of UPR inhibitor Ceapin-A7
 year: 2023
-authors: Jesse Bloom
+authors: Keith Walcott and Angela Phillips
 
 # ----------------------------------------------------------------------------
 # Site numbering, mutation classification, and neut standards
@@ -64,8 +64,8 @@ neut_standard_barcodes: data/neutralization_standard_barcodes.csv
 # gene (codon) sequence (beginning with "http" or "ftp") or just path to file.
 # If these next two variables are "null" instead, then the variants are built
 # from scratch using parameters below.
-prebuilt_variants: null
-prebuilt_geneseq: null
+prebuilt_variants: data/codon_variants.csv
+prebuilt_geneseq: data/codon.fasta
 
 # Parameters for building variants from PacBio sequencing, only needed if
 # not using pre-built variants.
